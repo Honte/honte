@@ -111,72 +111,16 @@ class PlayersController extends AppController {
             'anchor' => 'Zarejestrowani',
         ));
 
-        if ($tournament['Tournament']['max_players']) {
-            $limit = $tournament['Tournament']['max_players'];
-            $dbo = $this->Player->getDataSource();
-            $subQuery = $dbo->buildStatement(
-                array(
-                    'fields' => array('created'),
-                    'table' => $dbo->fullTableName($this->Player),
-                    'alias' => 'Player_inner',
-                    'limit' => $limit,
-                    'conditions' => array(
-                        'Player_inner.tournament_id' => $tournament['Tournament']['id']
-                    ),
-                    'order' => 'created ASC',
-                    'group' => NULL,
-                ),
-                $this->Player
-            );
-            $subQuery = 'created <= (select max(created) from (' . $subQuery . ') as temp)';
-            // from cake_players where tournament_id = 9 order by created limit 16) as wewn)';
-            $subQueryExpression = $dbo->expression($subQuery);
-
-            $players = $this->Player->find('all',
-              array(
-                    'contain' => array(),
-                    'order' => 'confirmation DESC, rank DESC, surname ASC',
-                    'limit' => $limit,
-                    'conditions' => array(
-                        'Player.tournament_id' => $tournament['Tournament']['id'],
-                        $subQueryExpression
-                     )
-                )
-            );
-
-            $reserves = $this->Player->find('all',
-              array(
-                    'contain' => array(),
-                    'limit' => 100,
-                    'offset' => $tournament['Tournament']['max_players'],
-                    'conditions' => array(
-                        'Player.tournament_id' => $tournament['Tournament']['id']
-                     )
-                )
-            );
-        } else {
-            // no limit on number of players in tournament
-            $players = $this->Player->find('all',
-              array(
-                    'contain' => array(),
-                    'order' => 'confirmation DESC, rank DESC, surname ASC',
-                    'limit' => 100,
-                    'conditions' => array(
-                        'Player.tournament_id' => $tournament['Tournament']['id']
-                     )
-                )
-            );
-
-            $reserves = array ();
-        }
-
+        $players = $this->Player->getRegisteredPlayers(
+            $tournament['Tournament']['id'],
+            $tournament['Tournament']['max_players']
+        );
 
         $this->pageTitle = $tournament['Tournament']['title'].' : Lista zapisanych graczy';
         $this->description = 'Lista zapisanych graczy na turniej '.$tournament['Tournament']['title'];
 
-        $this->set('players', $players);
-        $this->set('reserves', $reserves);
-        $this->set('rank', Configure::read('Levels'));
+        $this->set('players', $players['players']);
+        $this->set('reserves', $players['reserves']);
         $this->set('tournament', $tournament);
     }
 

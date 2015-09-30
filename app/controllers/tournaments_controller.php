@@ -61,6 +61,13 @@ class TournamentsController extends AppController {
             'anchor' => $tournament['Tournament']['title'],
         ));
 
+        $players = $this->Tournament->Player->getRegisteredPlayers(
+            $tournament['Tournament']['id'],
+            $tournament['Tournament']['max_players']
+        );
+
+        $this->set('players', $players);
+
         $this->pageTitle = "Turniej Go : ".$tournament['Tournament']['title'];
         $this->description = $tournament['Tournament']['short'];
 

@@ -187,5 +187,9 @@ aside ul {overflow: hidden;}
 #tournaments table {width: auto; min-width: initial; overflow: auto; display: block;}
     /*#tournaments table [class*=game] {display: none;}*/
     #tournaments table tbody th {display: none}
+	#tournaments .registration { margin: 0 }
+	#tournaments .registration .input > label,
+	#tournaments .registration .input > input {float: none}
+	#tournaments .registration .input > input {width: auto;}
 
 #main > .tournament .tournament-enroll strong {position: inherit}

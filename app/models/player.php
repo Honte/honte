@@ -85,6 +85,79 @@ class Player extends AppModel {
 		return true;
 		
 	}
-	
+
+	/**
+	 * Returns list of registered players
+	 * @param int $tournamentId
+	 * @param int $maxPlayers
+	 * @return array {
+	 * 	array $players
+	 * 	array $reserves
+	 * }
+	 */
+	function getRegisteredPlayers($tournamentId, $maxPlayers = 0) {
+		$result = array();
+
+		if ($maxPlayers) {
+			$dbo = $this->getDataSource();
+
+			$subQuery = $dbo->buildStatement(
+				array(
+					'fields' => array('created'),
+					'table' => $dbo->fullTableName($this),
+					'alias' => 'PlayerInner',
+					'limit' => $maxPlayers,
+					'conditions' => array(
+						'PlayerInner.tournament_id' => $tournamentId
+					),
+					'order' => 'created ASC',
+					'group' => NULL,
+				),
+				$this
+			);
+
+			$subQuery = 'created <= (select max(created) from (' . $subQuery . ') as temp)';
+			// from cake_players where tournament_id = 9 order by created limit 16) as wewn)';
+			$subQueryExpression = $dbo->expression($subQuery);
+
+			$result['players'] = $this->find('all',
+				array(
+					'contain' => array(),
+					'order' => 'confirmation DESC, rank DESC, surname ASC',
+					'limit' => $maxPlayers,
+					'conditions' => array(
+						'tournament_id' => $tournamentId,
+						$subQueryExpression
+					)
+				)
+			);
+
+			$result['reserves'] = $this->find('all',
+				array(
+					'contain' => array(),
+					'order' => 'created ASC',
+					'limit' => 100,
+					'offset' => $maxPlayers,
+					'conditions' => array(
+						'tournament_id' => $tournamentId
+					)
+				)
+			);
+		} else {
+
+			// no limit on number of players in tournament
+			$result['players'] = $this->find('all', array(
+				'contain'    => array(),
+				'order'      => 'confirmation DESC, rank DESC, surname ASC',
+				'limit'      => 100,
+				'conditions' => array(
+					'tournament_id' => $tournamentId
+				)
+			));
+
+			$result['reserves'] = array();
+		}
+
+		return $result;
+	}
 }
-?>
