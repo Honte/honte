@@ -349,7 +349,7 @@ table.calendar {border-spacing: 2px; margin: 0 0 15px; border-collapse: separate
 	
 #sidebarNextMeeting {text-align: center}
 #sidebarNextMeeting .meeting-warning {color: #900; margin-top: 10px;	}
-#sidebarNextMeeting .meeting-date {font-size: 1.1em; font-weight: bold;}
+#sidebarNextMeeting .meeting-date {font-size: 1.1em; font-weight: bold; white-space: nowrap; }
 #sidebarNextMeeting a {
 	display: block;
 	font-size: 1.2em;
