@@ -13,6 +13,6 @@
         <?php echo $html->link('
             <strong>Poznaj zasady!</strong>
             <span>Przejdź do interaktywnego kursu Go</span>
-        ', 'http://go.art.pl/kurs', array('escape' => false, 'title' => 'Poznaj zasady w interaktywnym kursie Go')); ?>
+        ', 'http://kursgo.pl', array('escape' => false, 'title' => 'Poznaj zasady w interaktywnym kursie Go')); ?>
     </div>
 </section>

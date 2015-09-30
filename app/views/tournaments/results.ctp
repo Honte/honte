@@ -4,9 +4,9 @@
     <h1><?php echo $tournament['Tournament']['title']; ?> - Wyniki</h1>
 
 	<?php if (!empty($tournament['Tournament']['results'])): ?>
-
+        <div class="results-wrapper">
 		<?php echo $tournament['Tournament']['results']; ?>
-	
+        </div>
 	<?php else: ?>
 		<p><strong>Dla tego turnieju nie opublikowano wyników</strong></p>
 	<?php endif; ?>
