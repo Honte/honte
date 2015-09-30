@@ -29,7 +29,11 @@
     </div>
     <?php endif; ?>
 
-    <p><?php echo $tournament['Tournament']['short']; ?></p>
+    <?php if (strpos($tournament['Tournament']['short'], '<p>') >= 0): ?>
+        <?php echo $tournament['Tournament']['short']; ?>
+    <?php else: ?>
+        <p><?php echo $tournament['Tournament']['short']; ?></p>
+    <?php endif; ?>
 
     <p class="tournament-more">
         <?php echo $html->link('czytaj więcej...', array('controller' => 'tournaments', 'action' => 'view', $tournament['Tournament']['id']), array('class' => 'button')); ?>

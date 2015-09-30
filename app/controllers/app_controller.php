@@ -5,7 +5,7 @@
 class AppController extends Controller {
 	
 	var $components = array('Session', 'Email', 'json', 'Cookie', 'DebugKit.Toolbar');
-	var $helpers = array('Form', 'Html', 'Javascript', 'Session', 'LedCommon.Image', 'Calendar', 'Board', 'Time', 'LedCommon.Common', 'LedCommon.Navigation');
+	var $helpers = array('Form', 'Html', 'Javascript', 'Session', 'LedCommon.Image', 'Calendar', 'Board', 'Time', 'Go', 'LedCommon.Common', 'LedCommon.Navigation');
 	var $uses = array('Navigation');
 	
 	var $pageTitle = 'Honte';

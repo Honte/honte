@@ -22,6 +22,7 @@
 		
 article {clear: both; position: relative; overflow: hidden;}
 article.listed {margin: 20px 0 40px; padding: 0 0 0 100px;}
+	article.listed ul {list-style-type: disc; margin-left: 20px; line-height: 1.2em; margin-bottom: 10px;}
 	article .article-details {
 		position: absolute; 
 		left: 0; 
@@ -193,8 +194,8 @@ table.calendar {border-spacing: 2px; margin: 0 0 15px; border-collapse: separate
 	.tournament .tournament-more {float: left;}
 	.tournament .tournament-enroll {float: right; vertical-align: middle; }
 		.tournament .tournament-enroll strong {font-size: 1.1em;}
-	#tournaments .tournament-navigation {list-style-type: none; overflow: hidden; padding: 10px 0;}
-		#tournaments .tournament-navigation li {display: inline;}
+	#tournaments .tournament-navigation {list-style-type: none; overflow: hidden; }
+		#tournaments .tournament-navigation li {display: inline-block; margin: 5px 0;}
     #tournaments table {margin: 20px 0; min-width: 680px; overflow: auto;}
         #tournaments table th {text-align: left; padding: 3px;}
         #tournaments table td {padding: 5px;}

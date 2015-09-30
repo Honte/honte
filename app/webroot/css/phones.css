@@ -122,7 +122,7 @@
 			
 #content {width: auto; float: none; clear:  both;}
 
-#main {width: auto;}
+#main {width: auto; float: none;}
 
 #sidebar {display: none;}
 
@@ -184,8 +184,8 @@ aside ul {overflow: hidden;}
 			aside li a img { border: 3px solid white; }
 			aside li a img:hover { border: 3px solid #7a9e2c;}
 
-#tournaments table {width: auto; min-width: auto; overflow: auto; display: block;}
-    #tournaments table [class*=game] {display: none;}
+#tournaments table {width: auto; min-width: initial; overflow: auto; display: block;}
+    /*#tournaments table [class*=game] {display: none;}*/
     #tournaments table tbody th {display: none}
 
 #main > .tournament .tournament-enroll strong {position: inherit}

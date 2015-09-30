@@ -24,8 +24,8 @@
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $p['Player']['name']; ?></td>
                 <td><?php echo $p['Player']['surname']; ?></td>
-                <td><?php echo $rank[$p['Player']['rank']]; ?></td>
-                <td><?php echo $p['Player']['city']; ?></td>
+                <td><?php echo $this->Go->rank($p['Player']['rank']); ?></td>
+                <td><?php echo $this->Go->sp2nb($p['Player']['city']); ?></td>
                 <?php if($tournament['Tournament']['nights'] > 0): ?>
                     <td><?php echo $registering->showNights($p['Player']['nights']); ?></td>
                 <?php endif; ?>
@@ -61,8 +61,8 @@
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $p['Player']['name']; ?></td>
                     <td><?php echo $p['Player']['surname']; ?></td>
-                    <td><?php echo $rank[$p['Player']['rank']]; ?></td>
-                    <td><?php echo $p['Player']['city']; ?></td>
+                    <td><?php echo $this->Go->rank($p['Player']['rank']); ?></td>
+                    <td><?php echo $this->Go->sp2nb($p['Player']['city']); ?></td>
                     <?php if($tournament['Tournament']['nights'] > 0): ?>
                         <td><?php echo $registering->showNights($p['Player']['nights']); ?></td>
                     <?php endif; ?>
