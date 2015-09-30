@@ -1,0 +1,191 @@
+	header h1 {margin-bottom: 5px; color: #7f8d27; font-size: 2.2em; text-transform: uppercase;}
+	header h2 {color: #4f581b; font-size: 1.5em;}
+	
+	.centered {width: auto; padding: 0 5px; margin: 0;}
+	
+	#navigation {float: none; display: block; background: #7f8d27; margin: 10px 0; border: solid #4f581b; border-width: 0 0 3px 0; padding-top: 5px; }
+	#navigation ul {float: none; display: block; height: auto;}
+	#navigation .n-level-0 {float: none; display: block; height: auto; padding: 5px;}
+		#navigation .n-level-0 .n-li-level-0 {
+			float: none;
+			margin: 5px 10px;
+		}
+		#navigation .n-level-0 .n-li-level-0.current {
+			float: none;
+			margin: 5px 10px;
+		}
+			#navigation .n-li-level-0 .n-a-level-0 {
+				margin: 0; 
+				text-align: center;
+				display: block;	
+				font-size: 13px;
+				color: white; 
+				text-decoration: none; 
+				font-weight: bold; 
+				padding: 5px 0; 
+				line-height: 25px;
+			}
+			#navigation .n-li-level-0.n-no-children.current .n-a-level-0 {
+				background-color: #f3f7d5;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;	
+				border: 3px solid #4f581b; 
+				padding: 5px 0; 
+				margin: -3px; 
+			}
+			#navigation .n-li-level-0.current .n-a-level-0 {
+				background-color: #f3f7d5;
+				-webkit-border-radius: 5px 5px 0 0;
+				-moz-border-radius: 5px 5px 0 ;
+				border-radius: 5px 5px 0 0;
+				border: 3px solid #4f581b; 
+				padding: 5px 0; 
+				margin: -3px; 
+				border-bottom-width: 0;
+			}
+			#navigation .n-li-level-0.current:hover .n-a-level-0 {
+				background-color: #f3f7d5;
+				-webkit-border-radius: 5px 5px 0 0;
+				-moz-border-radius: 5px 5px 0 ;
+				border-radius: 5px 5px 0 0;
+				border: 3px solid #4f581b; 
+				padding: 5px 0; 
+				margin: -3px; 
+				border-bottom-width: 0;
+			}
+			#navigation .n-li-level-0:hover .n-a-level-0 {
+				margin: -3px; 
+				border: 3px solid #4f581b; 
+				background: #f3f7d5; 
+				color: #4f581b; 
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				position: static;
+				padding: 5px 0;
+				z-index: 5;
+				
+			}
+			
+			#navigation .n-li-level-0.n-no-children:hover .n-a-level-0 {		
+				-webkit-border-radius: 5px; 
+				-moz-border-radius: 5px;     
+				border-radius: 5px;
+				padding: 5px 0;
+				margin: -3px;
+				border: 3px solid #4f581b; 
+			}
+			
+			#navigation .n-level-1 {display: none;}
+			#navigation .n-li-level-0:hover .n-level-1 {
+				display: none;
+				margin: 0;
+				padding: 0;
+				min-width: 150px;
+				position: static;
+				z-index: 3;
+				background: #f3f7d5;
+				border: 3px solid #4f581b;
+				-webkit-border-radius: 0 5px 5px 5px; 
+				-moz-border-radius: 0 5px 5px 5px;     
+				border-radius: 0 5px 5px 5px;
+			}
+			
+			
+/*			#navigation .n-li-level-0:hover .n-level-1 {
+				display: none;
+			}
+			#navigation .n-li-level-0.current:hover .n-level-1 {
+				display: block;
+			}*/
+			#navigation .n-li-level-0.current .n-level-1 {
+				display: block;
+				background: #f3f7d5;
+				border: 3px solid #4f581b; 
+				margin: -3px;
+				border-top-width:  0;
+				-webkit-border-radius: 0 0 5px 5px; 
+				-moz-border-radius: 0 0 5px 5px;     
+				border-radius: 0 0 5px 5px;
+				overflow: hidden;
+				padding-bottom: 10px;
+				text-align: center;
+			}
+			#navigation .n-li-level-0.current .n-level-1 .n-li-level-1 {
+				display: inline;
+			}
+			
+			#navigation .n-li-level-1 a {display: inline; color: #4f581b; padding: 5px 20px; line-height: 1.8em; text-decoration: none;}			
+			#navigation .n-li-level-1 a:hover {display: inline; background: #7f8d27; color: white; }
+			#navigation .n-level-0 .n-li-level-0 a.n-a-level-0.n-strona-glowna {text-indent: 0; background-image: none; width: auto;}
+			
+#content {width: auto; float: none; clear:  both;}
+
+#main {width: auto;}
+
+#sidebar {display: none;}
+
+footer ul {list-style: none; text-align: left; }
+	footer #additionalNavigation .n-li-level-0 {float: left; padding: 0 20px 0 0;}
+footer #additionalNavigation {clear: both; margin: 10px 0; overflow: hidden; }
+	footer #additionalNavigation .n-level-0 ul {margin-top: 10px;}
+	
+	
+#introduction {margin: 10px auto 0;  overflow: hidden; width: auto;}
+	#introduction .board {display: none;}	
+	#introduction .learn #hint {display: none;}
+		
+article {clear: both; position: relative; overflow: hidden;}
+article.listed {margin: 20px 0 40px; padding: 0;}
+	article .article-details {
+		position: static; 
+		left: 0; 
+		border: 0;
+		background: none;
+		-webkit-border-radius: 0; 
+		-moz-border-radius: 0;     
+		border-radius: 0;
+		padding: 2px;
+		width: auto;
+	}
+		article .article-details h3,
+		article .article-details h4 {float: none; display: inline; color: #414141; font-size: 0.9em; text-transform: uppercase; text-align: left; font-weight: normal; margin-right: 5px;}
+			article .time-day,
+			article .time-year {display: inline; text-align: center; font-family: "Georgia", sans; margin: 0 0 5px;}
+			article .time-day {font-size: 1em;}
+			article .time-year {font-size: 1em; letter-spacing: 0; margin-right: -8px; margin-bottom: 0;  padding-left: 4px}
+			
+		article h1 a {text-decoration: none; text-shadow: #ccc 1px 1px 1px;}
+		article .article-photo {display: block; float: none; width: 250px; margin: 0 15px 15px 0; text-align: center;}
+		
+		article .article-more {margin: 10px 20px; float: right; text-align: right;}
+		
+article.main .article-main-details {display: block; margin: -10px 0 20px 0;}
+article .article-content {width: auto;}
+article .article-content p {text-align: justify; width: auto;}
+article.main {width: auto;}
+	article.main h1, article.main h2, article.main h3, article.main h4 {line-height: 1.4em;}
+	article.main h2 {margin: 20px 0 10px;}
+	article.main h3 {margin: 15px 0 10px;}
+	article.main p {margin: 10px 0; line-height: 1.4em;}
+	article.main ol,
+	article.main ul {margin-left: 20px; margin-top: 5px; margin-bottom: 10px;}
+	article.main ol {list-style-type: decimal}
+	article.main ul {list-style-type: disc}
+	article.main li {margin: 5px 0; line-height: 1.4em;}
+	article.main blockquote {margin: 5px 0; padding: 10px 20px 10px 90px; background-color: #eee; text-align: justify; background-image:url(../img/quote.png); background-repeat: no-repeat; min-height: 60px;}
+	article.main pre {overflow: scroll; padding: 10px; background: #eee;}
+	
+aside { float: none; clear: both; width: auto;}
+aside ul {overflow: hidden;}
+	aside li {margin: 5px 0; list-style-type: none; float: left;}
+		aside li a:hover {background-color: transparent;}
+			aside li a img { border: 3px solid white; }
+			aside li a img:hover { border: 3px solid #7a9e2c;}
+
+#tournaments table {width: auto; min-width: auto; overflow: auto; display: block;}
+    #tournaments table [class*=game] {display: none;}
+    #tournaments table tbody th {display: none}
+
+#main > .tournament .tournament-enroll strong {position: inherit}

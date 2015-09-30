@@ -1,0 +1,78 @@
+body { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 13px; background: url(../img/mpp/bg.png) #d8dbc7 repeat-x; overflow-y: scroll;}
+
+a {color: green; }
+a:hover { color: #424e3b;}
+a:visited {color: black;}
+a:visited:hover {color: #424e3b;}
+
+#contener { width: 900px; margin: 0 auto; background: url(../img/mpp/bg_content.gif) repeat-y;}
+
+#header { height: 150px; background: url(../img/mpp/header.png) #424e3b no-repeat; }
+	#header h1 { font-size: 3em; padding-top: 10px; text-align: right; }
+		#header h1 a {
+			color: white; text-decoration: none; text-shadow: 2px 2px 5px black; line-height: 1.6em;
+		}
+			#header h1 a strong, #header h1 a span {display: block;  font-weight: normal;}
+
+#navbar { background: url(../img/mpp/bg.png) repeat-x; }
+	#navbar ul {width: 900px; list-style-type: none; overflow: hidden; border: solid #4f5a4a; border-width: 1px 0 0 0;}
+		#navbar ul li, #navbar ul li a {display: block; float: left; }
+		#navbar ul li {
+			border: solid #3d4738; border-width: 0 1px 0 0;
+		}
+		#navbar ul li a {
+			padding: 11px 50px 15px; color: white; text-shadow: 1px 1px 3px black; text-decoration: none;
+			border: solid #4f5a4a; border-width: 0 1px 0 0;
+		}
+		#navbar ul li a:hover {color: #919191;}
+		#navbar .last, #navbar .last a {border: none;}
+
+#content_wrapper { background: #f1f2ed url(../img/mpp/bg_content.gif) repeat-y; border: solid #e4e5e0; border-width: 0 0 1px; overflow: hidden;}
+#content { float: left; width: 558px; background: #f6f7f2; padding: 0 20px 20px;  font-family: Verdana, sans; overflow: hidden; }
+	#content h2, #content h3, #sidebar h3 {padding: 10px 0; margin: 20px 0 10px; border: solid #ddded9; border-width: 0 0 1px 0; font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+	#content h2 { font-size: 1.6em;}
+	#content h3, #sidebar h3 { clear: both; font-size: 1.3em; }
+	#content h4 {font-size: 1.1em; margin: 10px 0; }
+	#content p, #content ul {line-height: 1.3em;}
+	#content p {margin-top: 10px; text-align: justify }
+	#content ol {list-style-type: decimal; }
+	#content ol.list {list-style-type: decimal; font-size: 1.1em; }
+	#content ol.list li {margin-top: 3px; margin-bottom: 3px; line-height: 1.4em;}
+	#content ul {list-style-type: disc; }
+		#content ul li, #content ol li {margin-left: 20px;}
+	#content dl {margin: 10px 0; overflow: hidden;}
+		#content dt {clear: left; float: left; width: 100px;}
+		#content dt, #content dd {padding: 5px 0;}
+		#content dd {margin-left: 100px;}
+
+	#content .left_img {float: left; width: 170px;}
+	#content .right_img {float: right; width: 133px;}
+	#content .center {text-align: center;}
+	#content .clear {clear: both;}
+	#content img {padding: 0 5px;}
+
+#content form {margin: 10px 0;}
+#content fieldset {float: left; margin: 5px; padding: 8px; width: 250px; border: 1px #ddded9 solid;}
+	#content fieldset legend {margin-left: 10px; font-size: 0.9em; color: #929292;}
+		#content fieldset .input {margin: 0 0 5px 0;}
+		#content label {display: block; margin-bottom: 6px; font-size: 0.9em; padding: 2px;}
+		#content input[type=text] {width: 240px; border: 1px #ddded9 solid; padding: 2px;}
+		#content select {border: 1px #ddded9 solid; }
+		#content .input, #content .submit {margin: 0 0 5px 14px;}
+		#content .submit {margin-top: 10px;}
+
+ul#plan {list-style-type: none; margin: 0 0 0 -5px; overflow: hidden;}
+	ul#plan li { list-style-type: none; float: left; width: 545px; height: 240px; margin: 0 5px; background: #d8dbc7; padding: 0 5px; }
+		ul#plan li p {text-align: left;}
+
+
+#sidebar {float: right; width: 280px; padding: 0 10px 20px; overflow: hidden;}
+	#sidebar dl {margin: 5px 0 10px; overflow: hidden; font-family: Verdana, sans;}
+		#sidebar dt {float: left; width: 70px; }
+		#sidebar dt, #sidebar dd { margin: 2px 0; }
+		#sidebar dd {margin-left: 70px; }
+	#sidebar p {text-align: center;}
+	#sidebar .support { margin: 20px 0; text-align: center; line-height: 1.5em;}
+
+
+#footer { clear: both; background: #eff0eb; padding: 10px; text-align: right; border: solid #f6f7f2; border-width: 2px 0 0 0; }

@@ -1,0 +1,1 @@
+<?php echo $javascript->object(array('html' => $this->element('admin/photo', array('photo' => $photo)), 'success' => $success)); ?>

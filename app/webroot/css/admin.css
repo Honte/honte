@@ -1,0 +1,152 @@
+/* general properties */
+* {padding: 0; margin: 0;}
+html {height: 100%; width: 100%; background: #fff;}
+body {background: #fff; width: 945px; height: auto; margin: 20px auto; text-align: center;}
+div, input, select, textarea {font: 11px /140% Tahoma, sans-serif; color: #000000; margin: 0px;}
+img {border: none; vertical-align: top;}
+h1, h2, h3 {font-family: Verdana}
+ul, ol {margin-left: 20px;}
+a {color: #7a9e2c; text-decoration: underline;}
+a:hover {color: #900;}
+
+.spinner {display: none;}
+
+.error-message {color: #900; margin-left: 100px; margin-bottom: 3px; margin-top: -3px;}
+.error input {border: 1px solid #900;}
+.error select {border: 1px solid #900;}
+.error textarea {border: 1px solid #900;}
+.grey {color: #b2b2b2;}
+.hidden {display: none;}
+
+.admin_photo {float: right; padding: 0 50px; text-align: center;}
+    .admin_photo img {display: block;}
+	
+.paging { margin: 20px 0;  text-align: center; }
+	.paging span.current {color: #999;}
+	.paging div.status {margin-bottom: 6px; font-weight: bold;}
+		 
+#site {float: left; width: 945px;}
+	#header {width: 100%; text-align: left;}
+		.header-logo {margin: 5px 20px;}
+
+	#admin_panel {padding: 5px 0; text-align: right; margin-top: 2px;}
+		#admin_panel a {color: black; font: 12px;}
+		#admin_panel a:hover {color: red;}
+		
+	#main_panel {padding: 5px 0; background-color: #333333; text-align: left; margin-top: 2px; padding-left: 10px; text-align: center;}
+		#main_panel a {color: #dddddd; font-size: 14px;}
+		#main_panel a:hover {color: red; }
+
+	#flashMessage.failure {float: left; clear: left; width: 905px; margin-top: 20px; padding: 5px 20px; background: #f5e9e9; border: 1px solid #9a2929; font: 11px Tahoma, sans-serif; color: #9a2929}
+	#flashMessage.success {float: left; clear: left; width: 905px; margin-top: 20px; padding: 5px 20px; background: #e3f79e; border: 1px solid #7a9e2c; font: 11px Tahoma, sans-serif; color: #7a9e2c;}
+    .nice #flashMessage {width: 90%;}
+    
+    #admin_navigation {float: left; width: 161px; padding: 10px 5px; margin: 20px 20px 40px 0; background: #e3e3e3; text-align: center; border: 1px solid #aaa; }
+        #admin_navigation a {font-size: 14px; color: #232323;}
+        #admin_navigation a:hover {background-color: #232323; color: #e3e3e3;}
+        #admin_navigation hr {width: 80%; border: 1px solid #9a2929; margin: 5px auto;}
+        #admin_navigation ul {list-style-type: none; margin: 0;}
+            #admin_navigation ul li {margin: 5px 0;}
+
+    #admin_content {float: left; width: 750px; background: #f5f5f5; margin: 20px 0 40px; border: 1px solid #aaa; text-align: left; }
+        #admin_content h1 {width: 100%; background-color: #555; color: #fff; padding: 3px 0; font: bold 14px /140% Tahoma, sans-serif; text-align: center; margin: 0px;}
+        #admin_content div {margin: 10px;}
+            #admin_content .photos {margin-left: 210px; }
+                #admin_content .photos span {clear: both; display: block; font-size: 13px;}
+                    #admin_content .photos span a {display: inline; margin-right: 10px;}
+                #admin_content .photos ul {list-style-type: none; margin: 5px -5px;}
+                #admin_content .photos strong {display: block; margin: 5px 0;}
+                #admin_content .photos li {float: left; width: 150px; text-align: center; padding: 5px; margin: 5px; height: 130px;}
+                #admin_content .photos li.draggable {padding: 3px; border: 2px dotted #d4d4d4;}
+                    #admin_content .photos li small {display: block; }
+                        #admin_content .photos li small a {display: inline; margin: 0 5px; }
+                    #admin_content .photos li img, #admin_content .photos li span {display: block;}
+
+        #admin_content p.hint {margin: 5px 20px;}
+
+
+
+    .table {width: 100%; border-spacing: 1px;}
+		.table .center {text-align: center;}	
+		.table td, .table th {padding: 2px 5px;}
+		.table td.lp {text-align: center; width: 30px;}
+		.table td.day {padding-left: 10px; font-size: 10px}
+		.table th {background-color: #444; color: #eeeeee;}
+			.table th a{color: #eee;}
+			.table th a:hover {color: #fff;}
+		.table td.nav {background-color: #444; color: #eeeeee;}
+
+
+	#footer {clear: both; width: 100%;}
+		.footer-logo1 {float:left; position: relative; left: 400px;  }
+		.footer-logo2 {float:left; position: relative; left: 450px;  }
+		.footer-logo3 {float:left; position: relative; left: 350px; }
+		.footer-text {float:right; clear: right; text-align: left; color: #aaaaaa; font-size:9px;}
+
+#dialog label, #dialog input { display:block; width: 100px; }
+#dialog	input.text { margin-bottom:12px; width:95%; }
+#dialog	fieldset { padding:0; border:0; margin-top:25px; }
+
+
+
+form {}
+	form input, form select, form textarea {padding: 2px; margin: 0 0 5px;}
+	form .short textarea {height: 100px}
+	form textarea {height: 350px; width: 300px;}
+	form .input label, form .date label {display: block; float: left; width: 200px; margin: 0 0 7px;}
+	form .text input {width: 200px; }
+	form .select select {width: 200px; }
+
+	form .date input {width: 200px; margin-right: 5px;}
+	form .submit input {margin-left: 200px;}
+
+/* Login section */
+	#login {margin: auto; margin-top: 50px; width: 250px; text-align: center}
+		#login table {border: 1px solid #444; padding: 0px}
+		#login th {background-color: #444; color: white; font-weight: bold; padding: 5px}
+		#login td {width: 150px;}
+		#login td.tag {width: 40px;}
+		#login input {margin: 0;}
+		
+	.passchange {text-align: center}
+		.passchange table {margin: 20px auto; padding: 0px; text-align: left;}
+		.passchange td {}
+		.passchange td.tag {width: 120px;}
+		
+		.passchange input {width: 150px;}
+		.passchange input.submit {width: auto; margin-top: 5px;}
+		
+/* ladder */
+	.result {}
+		.result label {display: block; float: left; width: 200px; margin: 0 0 7px;}
+		.result select {width: 80px;  display: inline;}
+		.result input {width: 110px;  display: inline;}
+		
+	#ladder_table {width: 400px; margin: 10px auto;	border-spacing: 2px; }
+		#ladder_table td {padding: 2px 5px; background-color: #fff}
+		#ladder_table td.lp {width: 20px; background-color: #444; color: #fff;}
+		#ladder_table .drag_class td {background-color: #444; color: #fff;}
+
+	#ladder_players {width: 400px; margin: 10px auto; border-spacing: 1px; }
+		#ladder_players td {padding: 2px 5px; background-color: #fff}
+		#ladder_players td.lp {width: 20px; background-color: #444; color: #fff;}
+	
+	#LadderAddForm .submit {margin: 0;}
+	#LadderAddForm .submit input {margin: 0;}
+
+/* Meeting panel */
+    #meeting {list-style-type: none;}
+        #meeting li {margin: 10px 0; width: 400px; height: 60px; overflow: hidden;}
+            #meeting li h3 {background-color: #939393; color: #fff; padding: 5px; width: 390px; }
+            #meeting li h4, #meeting li p {padding: 1px 5px;}
+            #meeting li div {float: right; display: block; margin: 10px 0 0; padding: 15px; width: 60px; text-align: center;}
+	
+/* galeria */
+	.gallery textarea {width: 450px; height: 50px;}
+	.gallery img {margin: 0 0 5px 200px; }
+	.gallery #files {margin: 0 0 0 200px; }
+	.gallery .table {width: 500px; border-spacing: 1px; margin-left: 200px;}
+	.gallery .table td.lp {text-align: center; width: 30px; background-color: #444; color: #fff;}
+	.gallery .table td {background-color: #fff;}
+	#gallery_table img {margin: 0; }
+	#gallery_table .drag_class td {background-color: #444; color: #fff;}

@@ -1,0 +1,14 @@
+# ban wp.pl crawler, it is silly
+Order Allow,Deny
+Allow from all
+Deny from 212.77.100.47
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteCond %{REQUEST_URI} !^/zdjecia
+   RewriteCond %{REQUEST_URI} !^/old_site
+   RewriteCond %{REQUEST_URI} !^/old_honte
+   RewriteCond %{REQUEST_URI} !^/new
+   RewriteRule    (.*) app/webroot/$1 [L]
+</IfModule>

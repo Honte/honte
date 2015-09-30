@@ -1,0 +1,250 @@
+html {width: 100%; height: 100%;}
+body {
+	width: 100%; height: 100%;
+	font-family: 'Tahoma', sans-serif; 
+	font-size: 13px;
+	color: #454545;
+}
+
+* html #container {height: 100% }
+#container {width: 100%; min-height: 100%}
+
+.centered {margin-left: auto; margin-right: auto; width: 980px; padding-left: 0; padding-right: 0; position: relative;}
+
+.button
+{
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7f8d27), to(#4f581b));
+    background-image: -webkit-linear-gradient(top, #7f8d27, #4f581b);
+    background-image: -moz-linear-gradient(top, #7f8d27, #4f581b);
+    background-image: -ms-linear-gradient(top, #7f8d27, #4f581b);
+    background-image: -o-linear-gradient(top, #7f8d27, #4f581b);
+    background-image: linear-gradient(top, #7f8d27, #4f581b);
+    border: 1px solid #7f8d27;
+    padding: 4px 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #FFF;
+    -moz-border-radius: .2em;
+    -webkit-border-radius: .2em;
+    border-radius: .2em;
+    -moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.2) inset, 0 1px 0 rgba(50,80,20,.1);
+    -webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.2) inset, 0 1px 0 rgba(50,80,20,.1);
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.2) inset, 0 1px 0 rgba(50,80,20,.1);
+}
+
+.button:hover
+{
+    background-color: #7a9e2c;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7f8d27), to(#7a9e2c));
+    background-image: -webkit-linear-gradient(top, #7f8d27, #7a9e2c);
+    background-image: -moz-linear-gradient(top, #7f8d27, #7a9e2c);
+    background-image: -ms-linear-gradient(top, #7f8d27, #7a9e2c);
+    background-image: -o-linear-gradient(top, #7f8d27, #7a9e2c);
+    background-image: linear-gradient(top, #7f8d27, #7a9e2c);
+}
+
+.button:active
+{
+    -moz-box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    -webkit-box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    position: relative;
+    top: 1px;
+}
+
+.button:focus
+{
+    outline: 0;
+    background: #7a9e2c;
+}
+
+.button:before
+{
+    background: #ccc;
+    background: rgba(0,0,0,.1);
+    float: left;
+    width: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 1em 0 -1em;
+    padding: 0 .2em;
+    -moz-box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
+    -webkit-box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
+    box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
+    -moz-border-radius: .15em 0 0 .15em;
+    -webkit-border-radius: .15em 0 0 .15em;
+    border-radius: .15em 0 0 .15em;
+    pointer-events: none;
+}
+
+/* Buttons and inputs */
+
+button.button, input.button
+{
+    cursor: pointer;
+    overflow: visible; /* removes extra side spacing in IE */
+}
+
+/* removes extra inner spacing in Firefox */
+button::-moz-focus-inner
+{
+    border: 0;
+    padding: 0;
+}
+
+/* If line-height can't be modified, then fix Firefox spacing with padding */
+input::-moz-focus-inner
+{
+    padding: .4em;
+}
+
+/* The disabled styles */
+.button[disabled], .button[disabled]:hover, .button.disabled, .button.disabled:hover
+{
+    background: #eee;
+    color: #aaa;
+    border-color: #aaa;
+    cursor: default;
+    text-shadow: none;
+    position: static;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+   
+p {	margin: 5px 0; line-height: 1.4em; }
+
+h1 {font-size: 2em;}
+h2 {font-size: 1.7em;}
+h3 {font-size: 1.5em;}
+h4 {font-size: 1.3em;}
+h5 {font-size: 1.2em;}
+
+#main h1, #main h2 {margin-bottom: 20px;}
+article h1, article h2 {margin-bottom: 20px;}
+
+a {color: #4f581b; text-decoration: underline;}
+a:hover {color: white; background-color: #4f581b; }
+h1 a:hover {color: #900; background-color: inherit; text-decoration: underline;}
+
+p a, ul a, ol a {padding: 2px;}
+
+.paginate_navigation {margin: 10px 0; clear: both; list-style-type: none; overflow: hidden;}
+    .paginate_navigation li {border: 1px solid #4f581b; color: #4f581b; margin: 0 2px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; float: left; padding: 0;}
+    .paginate_navigation li a {display: block; padding: 3px 10px; text-decoration: none;}
+	.paginate_navigation li a:hover {padding: 3px 10px; }
+    .paginate_navigation li.current {border: 1px solid #d4d4d4; padding: 3px 10px; color: #d4d4d4;  }
+
+header {padding: 10px 0 0; }
+	header a {text-decoration: none; background-color: white;}
+	header hgroup {
+		padding: 5px 0 0 100px;
+		height: 75px;
+		background-image: url(../img/title.png);
+		background-repeat: no-repeat;
+		background-position: 5px center;
+		
+	}
+	header h1 {margin-bottom: 5px; color: #7f8d27; font-size: 2.8em; text-transform: uppercase;}
+	header h2 {color: #4f581b; font-size: 2em;}
+
+#navigation {display: block; background: #7f8d27; margin: 20px 0 5px; border: solid #4f581b; border-width: 0 0 3px 0; }
+	#navigation ul {list-style-type: none; }
+	#navigation .n-level-0 { padding: 0 20px; height: 25px;}
+		#navigation .n-level-0 .n-li-level-0 {margin: 0 10px; float: left; position: relative;}
+			#navigation .n-li-level-0 .n-a-level-0 {
+				display: block;
+				font-size: 15px;
+				color: white; 
+				text-decoration: none; 
+				font-weight: bold; 
+				padding: 0 10px; 
+				line-height: 25px;
+			}
+			#navigation .n-li-level-0.current .n-a-level-0 {
+				margin: -6px; 
+				padding: 3px 13px 3px; 
+				border: 3px solid #4f581b; 
+				background: white; 
+				color: #4f581b; 
+				-webkit-border-radius: 5px 5px 0 0; 
+				-moz-border-radius: 5px 5px 0 0; 
+				border-radius: 5px 5px 0 0; 
+				position: relative;
+				z-index: 4;
+				border-bottom-width: 0;
+			}
+			#navigation .n-li-level-0:hover .n-a-level-0 {
+				margin: -6px; 
+				padding: 3px 13px 8px; 
+				border: 3px solid #4f581b; 
+				background: #f3f7d5; 
+				color: #4f581b; 
+				-webkit-border-radius: 5px 5px 0 0;
+				-moz-border-radius: 5px 5px 0 0;     
+				border-radius: 5px 5px 0 0;
+				position: relative;
+				z-index: 5;
+				border-bottom-width: 0
+			}
+			#navigation .n-li-level-0.n-no-children:hover .n-a-level-0 {		
+				-webkit-border-radius: 5px; 
+				-moz-border-radius: 5px;     
+				border-radius: 5px;
+				border-bottom-width: 3px ;
+				padding: 3px 13px 3px; 
+			}
+			#navigation .n-level-1 {display: none;}
+			#navigation .n-li-level-0:hover .n-level-1 {
+				margin: 3px -6px;
+				padding: 5px 0;
+				min-width: 150px;
+				display: block;
+				position: absolute;
+				z-index: 3;
+				background: #f3f7d5;
+				border: 3px solid #4f581b;
+				-webkit-border-radius: 0 5px 5px 5px; 
+				-moz-border-radius: 0 5px 5px 5px;     
+				border-radius: 0 5px 5px 5px;
+			}
+			#navigation .n-li-level-1 a {display: block; color: #4f581b; padding: 0 20px; line-height: 1.8em; text-decoration: none;}			
+			#navigation .n-li-level-1 a:hover {background: #7f8d27; color: white; }
+			#navigation .n-level-0 .n-li-level-0 a.n-a-level-0.n-strona-glowna {text-indent: -9999px; background-image: url(../img/home.png); background-position: center center; background-repeat: no-repeat; width: 8px;}
+			
+#nextMeeting {padding: 5px 0; font-size: 0.9em; float: right;}			
+	
+#breadcrumbs {padding: 5px 0 10px; font-size: 0.9em; float: left; line-height: 1.3em;}			
+	#breadcrumbs .last {color: #7f8d27; font-weight: bold;}
+
+#content {clear: left; padding: 0 20px 20px; overflow: hidden;}
+	
+#main {width: 700px; float: left;}
+	
+#sidebar {float: right; width: 240px; padding: 0 10px;}
+	#sidebar section {margin: 20px 0 20px; position: relative;}
+	#sidebar h2 {font-size: 1.2em; margin-bottom: 5px; text-align: center; color: #4f581b}
+	#sidebar h3 {font-size: 1.1em;}
+
+#clear_footer {height: 143px; clear: both;}
+
+footer {height: 140px; marign: 0; margin-top: -153px; clear: both; border: solid #4f581b; border-width: 3px 0 0; background: #7f8d27; padding: 5px; color: white;} 
+	footer a {color: #eee; text-decoration: none; font-variant: small-caps; }
+	footer a:hover {color: white; background: transparent; text-decoration: underline;}
+	footer ul {list-style: none; text-align: left; }
+		footer #additionalNavigation .n-li-level-0 {float: left; padding: 0 40px 0 0;}
+	footer #additionalNavigation {clear: both; margin: 10px 0; overflow: hidden; }
+		footer #additionalNavigation .n-level-0 ul {margin-top: 10px;}
+	footer #copyright {clear: both; margin-top: 20px; text-align: center;}
+	footer .n-strona-glowna-box {display: none;}
+
+.current td {background-color: #4f581b; color: white;}
+.won td {background-color: #93b545}
+.won .game {background-color: #4f581b; color: white;}
+.lost td {background-color: salmon;}
+.lost .game {background-color: #900; color: white;}
+.jigo td {background-color: lightgray}
+.jigo .game {background-color: darkgray;}
