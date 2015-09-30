@@ -4,39 +4,14 @@
 <div id="tournaments">
 
     <h1><?php echo $tournament['Tournament']['title'] ?></h1>
-    <h2>Lista uczestników</h2>
 
+    <h2>Lista uczestników</h2>
     <?php if(!empty($players)): ?>
-    <table cellpadding="0" cellspacing="0" summary="lista zapisanych graczy" class="no-result-table">
-        <tr>
-            <th>l.p.</th>
-            <th>imię</th>
-            <th>nazwisko</th>
-            <th>ranking</th>
-            <th>klub / miasto</th>
-            <?php if($tournament['Tournament']['nights'] > 0): ?>
-                <th>nocleg</th>
-            <?php endif; ?>
-            <th>status</th>
-        </tr>
-        <?php foreach($players as $p): ?>
-            <tr>
-                <td><?php echo $i++; ?></td>
-                <td><?php echo $p['Player']['name']; ?></td>
-                <td><?php echo $p['Player']['surname']; ?></td>
-                <td><?php echo $this->Go->rank($p['Player']['rank']); ?></td>
-                <td><?php echo $this->Go->sp2nb($p['Player']['city']); ?></td>
-                <?php if($tournament['Tournament']['nights'] > 0): ?>
-                    <td><?php echo $registering->showNights($p['Player']['nights']); ?></td>
-                <?php endif; ?>
-                <?php if($p['Player']['confirmation']): ?>
-                    <td>potwierdzono</td>
-                <?php else: ?>
-                    <td>niepotwierdzono</td>
-                <?php endif; ?>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+        <?php echo $this->element('tournaments/player_list', array(
+            'players' => $players,
+            'nights' => $tournament['Tournament']['nights'] > 0,
+            'summary' => 'lista zapisanych graczy'
+        )); ?>
     <?php else: ?>
         <p><strong>Nie ma zapisanych graczy</strong></p>
     <?php endif; ?>
@@ -44,36 +19,11 @@
     <?php if ($tournament['Tournament']['max_players'] !== NULL): ?>
         <h2>Lista rezerwowa</h2>
         <?php if(!empty($reserves)): ?>
-        <table cellpadding="0" cellspacing="0" summary="lista graczy rezerwowych" class="no-result-table">
-            <tr>
-                <th>l.p.</th>
-                <th>imię</th>
-                <th>nazwisko</th>
-                <th>ranking</th>
-                <th>klub / miasto</th>
-                <?php if($tournament['Tournament']['nights'] > 0): ?>
-                    <th>nocleg</th>
-                <?php endif; ?>
-                <th>status</th>
-            </tr>
-            <?php foreach($reserves as $p): ?>
-                <tr>
-                    <td><?php echo $i++; ?></td>
-                    <td><?php echo $p['Player']['name']; ?></td>
-                    <td><?php echo $p['Player']['surname']; ?></td>
-                    <td><?php echo $this->Go->rank($p['Player']['rank']); ?></td>
-                    <td><?php echo $this->Go->sp2nb($p['Player']['city']); ?></td>
-                    <?php if($tournament['Tournament']['nights'] > 0): ?>
-                        <td><?php echo $registering->showNights($p['Player']['nights']); ?></td>
-                    <?php endif; ?>
-                    <?php if($p['Player']['confirmation']): ?>
-                        <td>potwierdzono</td>
-                    <?php else: ?>
-                        <td>niepotwierdzono</td>
-                    <?php endif; ?>
-                </tr>
-            <?php endforeach; ?>
-        </table>
+            <?php echo $this->element('tournaments/player_list', array(
+                'players' => $reserves,
+                'nights' => $tournament['Tournament']['nights'] > 0,
+                'summary' => 'lista graczy rezerwowych'
+            )); ?>
         <?php else: ?>
             <p><strong>Pusta</strong></p>
         <?php endif; ?>
