@@ -1,3 +1,8 @@
 .idea
-app/tmp
-app/webroot/img/imagecache
+
+app/tmp/cache/models/*
+app/tmp/cache/persistent/*
+app/tmp/cache/cake*
+app/tmp/logs/*
+
+app/webroot/img/imagecache/*
