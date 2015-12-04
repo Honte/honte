@@ -8,7 +8,7 @@
 		echo $html->meta('description', $description_for_layout);
 		echo $html->meta('keywords', 'honte, wielkopolski, ośrodek, go, baduk, gra, logiczna, planszowa, poznań');
 		echo $this->Html->css("reset");
-		echo $this->Html->css(array("layout", "view"), 'stylesheet');
+		echo $this->Html->css(array("layout", "view", "go-results-highlighter.min"), 'stylesheet');
 		echo $this->Html->css(array("phones"), 'stylesheet', array('media' => 'screen and (max-width: 785px)'));		
 		foreach ($rss_channel as $name => $rss) {
             echo '<link rel="alternate" type="application/rss+xml" title="'.$name.'" href="'.$html->url($rss).'" />';
@@ -22,7 +22,8 @@
 			"http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js",
 			"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js",
 			"http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js",
-            'jquery.resultTable'
+            "go-results-highlighter.min",
+			"common"
 		)); ?>
 		<?php echo $scripts_for_layout; ?>
 		<?php echo $this->element('html5fix');?>
