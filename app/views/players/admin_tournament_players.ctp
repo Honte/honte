@@ -9,7 +9,7 @@
 			<th></th>
 			<th><?php echo $paginator->sort('imię', 'name'); ?></th>
 			<th><?php echo $paginator->sort('nazwisko', 'surname'); ?></th>
-			<th><?php echo $paginator->sort('confirmation', 'status'); ?></th>
+			<th><?php echo $paginator->sort('status', 'confirmation'); ?></th>
 			<th><?php echo $paginator->sort('klub / miasto', 'city'); ?></th>
 			<th><?php echo $paginator->sort('siła', 'rank'); ?></th>
             <th><?php echo $paginator->sort('email', 'email'); ?></th>

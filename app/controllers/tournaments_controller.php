@@ -203,45 +203,72 @@ class TournamentsController extends AppController {
             $this->redirect($this->referer());
         }
 
-        $players = array();
-        foreach ($tournament['Player'] as $player) {
-            if (!empty($player['email'])) {
-                $players []= $player;
-            }
-        }
-
         if (!empty($this->data)) {
-            $this->Session->setFlash('test', 'default', array('class' => 'success'));
+            $selectedPlayers = $this->data['Tournament']['players'];
+            $players = array();
 
-            $failed = 0;
-            foreach ($players as $player) {
-                $dane = array();
-                $dane['template'] = 'reminder';
-                $dane['to'] = "{$player['name']} {$player['surname']} <{$player['email']}>";
-                $dane['from'] = 'Wielkopolski Ośrodek Go <poznan@go.art.pl>';
-                $dane['replyTo'] = 'poznan@go.art.pl';
-                $dane['subject'] = 'Przypomnienie o turnieju Go';
-                $dane['content'] = array('hash'  => $player['hash'],
-                                         'title' => $tournament['Tournament']['title'],
-                                         'message'  => $this->data['Tournament']['message']
-                );
-
-
-                if (!$this->sendMail($dane)) {
-                    $failed += 1;
+            foreach ($tournament['Player'] as $player) {
+                if ($selectedPlayers[$player['id']] == 1) {
+                    $players []= $player;
                 }
             }
 
-            if ($failed > 0) {
+            $total = count($players);
+            $failed = 0;
+            foreach ($players as $player) {
+                $mailData = array();
+                $mailData['template'] = $this->data['Tournament']['template'];
+                $mailData['to'] = "{$player['name']} {$player['surname']} <{$player['email']}>";
+                $mailData['from'] = 'Wielkopolski Ośrodek Go <poznan@go.art.pl>';
+                $mailData['replyTo'] = 'poznan@go.art.pl';
+                $mailData['subject'] = $this->data['Tournament']['subject'];
+                $mailData['content'] = array(
+                    'hash'  => $player['hash'],
+                    'title' => $tournament['Tournament']['title'],
+                    'tournamentUrl' => array(
+                        'admin' => false,
+                        'controller' => 'tournaments',
+                        'action' => 'view',
+                        $tournament['Tournament']['id']
+                    ),
+                    'cancelUrl' => array(
+                        'admin' => false,
+                        'controller' => 'players',
+                        'action' => 'cancel',
+                        $player['hash']
+                    ),
+                    'message'  => $this->data['Tournament']['message']
+                );
+
+                if (!$this->sendMail($mailData)) {
+                    $failed += 1;
+                    $selectedPlayers[$player['id']] = 0;
+                }
+            }
+
+            if ($total == 0) {
+                $this->Session->setFlash("Nie wybrano odbiorców", 'default', array('class' => 'failure'));
+            } else if ($failed > 0) {
                 $this->set('smtp-errors', $this->Email->smtpError);
-                $this->Session->setFlash("Nie udało się wysłać {$failed} przypomnień", 'default', array('class' => 'failure'));
+                pr($this->Email->smtpError);
+                $this->Session->setFlash("Nie udało się wysłać {$failed} wiadomości", 'default', array('class' => 'failure'));
             } else {
-                $this->Session->setFlash('Wysłano przypomnienie.', 'default', array('class' => 'success'));
+                $this->Session->setFlash("Wysłano {$total} wiadomości.", 'default', array('class' => 'success'));
 
             }
+
+            $this->set('selectedPlayers', $selectedPlayers);
+        } else {
+            $this->data['Tournament'] =  array(
+                'id' => $tournament['Tournament']['id'],
+                'template' => 'reminder',
+                'subject' => 'Przypomnienie o turnieju Go',
+                'message' => $tournament['Tournament']['description'],
+                'players' => array()
+            );
         }
 
-        $this->set('tournament', $tournament);
-        $this->set('players', $players);
+        $this->set('registeredPlayers', $tournament['Player']);
+        $this->set('tournament', $this->data);
     }
 }
