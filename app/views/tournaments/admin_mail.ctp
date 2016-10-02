@@ -1,4 +1,4 @@
-<?php echo $javascript->link(array('tiny_mce/tiny_mce'), false); ?>
+<?php echo $javascript->link(array('tiny_mce/tiny_mce', 'admin/mailing'), false); ?>
 <?php echo $this->element('tiny_mce'); ?>
 
 <h1>Wiadomość do zapisanych graczy</h1>
