@@ -119,18 +119,19 @@
 			#navigation .n-li-level-1 a {display: inline; color: #4f581b; padding: 5px 20px; line-height: 1.8em; text-decoration: none;}			
 			#navigation .n-li-level-1 a:hover {display: inline; background: #7f8d27; color: white; }
 			#navigation .n-level-0 .n-li-level-0 a.n-a-level-0.n-strona-glowna {text-indent: 0; background-image: none; width: auto;}
-			
+
+#breadcrumbs {display: none}
+
 #content {width: auto; float: none; clear:  both;}
 
 #main {width: auto; float: none;}
 
 #sidebar {display: none;}
 
-footer ul {list-style: none; text-align: left; }
-	footer #additionalNavigation .n-li-level-0 {float: left; padding: 0 20px 0 0;}
-footer #additionalNavigation {clear: both; margin: 10px 0; overflow: hidden; }
-	footer #additionalNavigation .n-level-0 ul {margin-top: 10px;}
-	
+#clear_footer {display: none}
+footer { height: auto; margin: 0;}
+	footer #additionalNavigation {display: none}
+	footer #copyright {margin: 0;}
 	
 #introduction {margin: 10px auto 0;  overflow: hidden; width: auto;}
 	#introduction .board {display: none;}	
