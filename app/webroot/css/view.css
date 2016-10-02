@@ -335,11 +335,9 @@ table.calendar {border-spacing: 2px; margin: 0 0 15px; border-collapse: separate
 #sidebarIncomingEvents ul {list-style-type: none;}
 	#sidebarIncomingEvents ul li {margin: 10px 0; font-size: 1.1em; line-height: 1.4em;}
 		#sidebarIncomingEvents ul li span {display: block; color: #888; font-size: 0.9em; line-height: 1em;}
-#sidebarAds ul {list-style-type: none;}
-	#sidebarAds ul li {margin-bottom: 5px;}
-		#sidebarAds ul li a {display: block; font-size: 1.3em; text-align: center;}
-/*		#sidebarAds ul li a {display: block; padding: 5px 0; text-align: center; background: #4f581b; border: 3px solid #4f581b; color: white; text-decoration: none;}
-		#sidebarAds ul li a:hover {background: #7a9e2c;}*/
+#recommended ul {list-style-type: none;}
+	#recommended ul li {margin-bottom: 5px;}
+		#recommended ul li a {display: block; font-size: 1.3em; text-align: center;}
 #sidebarMembersLegend td {padding: 2px 5px; vertical-align: middle}
 	#sidebar .sidebar-feed a {display: block; padding: 10px; text-decoration: none; overflow: hidden; color: #414141;}
 		#sidebar .sidebar-feed a img {float: left; margin-right: 10px;}
