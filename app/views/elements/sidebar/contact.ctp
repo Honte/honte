@@ -4,7 +4,6 @@
 	<h3>Wielkopolski Ośrodek Go</h3>
 	<p>
 	Grzegorz Sobański<br />
-	GG: 1511945<br />
 	tel.: +48 609533118<br />
 	poznan AT go.art.pl
 	</p>
