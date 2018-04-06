@@ -151,5 +151,31 @@ class AppController extends Controller {
 		else
 			return false;
 	}
+
+    /**
+     * @param string $slack_msg Message to deliver, supports slack markdown
+     * @param string $slack_channel Channel where the notification will be delivered
+     */
+    protected function notify_slack($slack_msg, $username, $slack_channel = "")
+    {
+        $url = Configure::read('Slack_webhook');
+        if (!$url) return; // slack not configured, skip notification
+
+        $options = array(
+            'http' => array(
+                'header' => "Content-type: application/json\r\n",
+                'method' => 'POST',
+                'timeout' => 0.5,
+                'content' => "{ \"text\": \"" . $slack_msg . "\", \"username\": \"" . $username . "\" " . ($slack_channel ? ", \"channel\": \"" . $slack_channel . "\"" : "") . "}"
+            )
+        );
+        $context = stream_context_create($options);
+        try {
+            $result = file_get_contents($url,false, $context);
+            // ignore output, it's only a notify
+        } catch (Exception $ex) {
+            // ignore, it's only a notify
+        }
+    }
+
 }
-?>

@@ -24,7 +24,7 @@ class PlayersController extends AppController {
     }
 
     function register($id = null) {
-
+        $rank = Configure::read('Levels');
         $this->Player->Tournament->contain();
         $tournament = $this->Player->Tournament->findById($id);
 
@@ -56,8 +56,12 @@ class PlayersController extends AppController {
                     $this->Session->setFlash('Zgłoszenie zostało przyjęte', 'default', array('class' => 'success'));
                 }
 
-                $this->redirect(array('controller' => 'tournaments', 'action' => 'view', $this->data['Player']['tournament_id']));
+                $slack_msg = ":heavy_check_mark: *".$this->data['Player']['name'].' '.$this->data['Player']['surname']."*, "
+                    . $rank[$this->data['Player']['rank']] . ', ' . $this->data['Player']['city']
+                    . ' zapisał się na turniej.';
+                $this->notify_slack($slack_msg, $tournament['Tournament']['title'], "#turniej");
 
+                $this->redirect(array('controller' => 'tournaments', 'action' => 'view', $this->data['Player']['tournament_id']));
             }
         }
 
@@ -84,7 +88,7 @@ class PlayersController extends AppController {
         $this->description = $tournament['Tournament']['short'].'  - rejestracja';
 
         $this->set('tournament', $tournament);
-        $this->set('rank', Configure::read('Levels'));
+        $this->set('rank', $rank);
     }
 
     function view($id = null) {
@@ -149,8 +153,14 @@ class PlayersController extends AppController {
         if (!empty($this->data)) {
 
             if (isset($this->data['cancel'])) {
+                $player = $this->Player->findById($this->data['Player']['id']);
+
                 if ($this->Player->delete($this->data['Player']['id'])) {
                     $this->Session->setFlash('Usunięto wpis', 'default', array('class' => 'success'));
+
+                    $slack_msg = ":heavy_multiplication_x: *". $player['Player']['name'] . ' ' . $player['Player']['surname']
+                        . "*, " . $player['Player']['city'] . ' zrezygnował z udziału w turnieju.';
+                    $this->notify_slack($slack_msg, $player['Tournament']['title'], "#turniej");
                 } else {
                     $this->Session->setFlash('Nie można usunąć wpsiu', 'default', array('class' => 'failure'));
                 }
