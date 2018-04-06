@@ -140,13 +140,7 @@ class AppController extends Controller {
 		$this->set('data', $data['content']);
 
 	   /* SMTP Options */
-	   $this->Email->smtpOptions = array(
-			'port'=>'465',
-			'timeout'=>'30',
-			'host' => 'ssl://smtp.gmail.com',
-			'username'=>'some.account@gmail.com',
-			'password'=>'some.gmail.password',
-	   );
+	   $this->Email->smtpOptions = Configure::read('smtp');
 
 		/* Set delivery method */
 		$this->Email->delivery = 'smtp';

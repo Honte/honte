@@ -19,4 +19,10 @@
         'website' => 'http://poznan.go.art.pl',
         'description' => "Informacje o spotkaniach poznańskiego klubu Go a także o wydarzeniach goistycznych odbywających się w całej Polsce."
     );
-?>
+    $config['smtp'] = array(
+        'port' => '465',
+        'timeout' => '30',
+        'host' => 'ssl://smtp.gmail.com',
+        'username' => 'some.account@gmail.com',
+        'password' => 'some.gmail.password',
+    );
