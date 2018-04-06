@@ -355,7 +355,10 @@ class DebugKitDebugger extends Debugger {
 			$level = $level['level'];
 		}
 		$files = $this->trace(array('start' => 2, 'format' => 'points'));
-		$listing = $this->excerpt($files[0]['file'], $files[0]['line'] - 1, 1);
+		if (is_array($files[0]))
+		    $listing = $this->excerpt($files[0]['file'], $files[0]['line'] - 1, 1);
+		else
+		    $listing = $files[0];
 		$trace = $this->trace(array('start' => 2, 'depth' => '20'));
 
 		if ($this->_outputFormat == 'fb') {
