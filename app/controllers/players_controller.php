@@ -58,7 +58,7 @@ class PlayersController extends AppController {
 
                 $slack_msg = ":heavy_check_mark: *".$this->data['Player']['name'].' '.$this->data['Player']['surname']."*, "
                     . $rank[$this->data['Player']['rank']] . ', ' . $this->data['Player']['city']
-                    . ' zapisał się na turniej.';
+                    . ' zapisał(a) się na turniej.';
                 $this->notify_slack($slack_msg, $tournament['Tournament']['title'], "#turniej");
 
                 $this->redirect(array('controller' => 'tournaments', 'action' => 'view', $this->data['Player']['tournament_id']));
@@ -159,7 +159,7 @@ class PlayersController extends AppController {
                     $this->Session->setFlash('Usunięto wpis', 'default', array('class' => 'success'));
 
                     $slack_msg = ":heavy_multiplication_x: *". $player['Player']['name'] . ' ' . $player['Player']['surname']
-                        . "*, " . $player['Player']['city'] . ' zrezygnował z udziału w turnieju.';
+                        . "*, " . $player['Player']['city'] . ' zrezygnował(a) z udziału w turnieju.';
                     $this->notify_slack($slack_msg, $player['Tournament']['title'], "#turniej");
                 } else {
                     $this->Session->setFlash('Nie można usunąć wpsiu', 'default', array('class' => 'failure'));
