@@ -74,7 +74,7 @@
 			</section>
 			
 			<section id="copyright" class="centered">
-				<p>Wielkopolski Ośrodek Go &copy; <?php echo $this->Common->copyright(2009); ?></p>
+				<p>Wielkopolski Ośrodek Go "Honte" &copy; <?php echo $this->Common->copyright(2009); ?></p>
 			</section>
 		</footer>
 		

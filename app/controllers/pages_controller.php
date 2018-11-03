@@ -15,7 +15,7 @@ class PagesController extends AppController {
 //		$this->Navigation->deleteAll("1 = 1");
 //		$this->Navigation->loadData($this->Navigation->defaultData);
 
-        $this->sidebars = array('meeting', 'contact', 'events', 'recent', 'ads');
+        $this->sidebars = array('fb', 'meeting', 'contact', 'events', 'recent', 'ads');
 
 		$this->pageTitle = 'Strona główna';
 		$this->render('home');

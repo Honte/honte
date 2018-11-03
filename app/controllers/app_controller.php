@@ -6,7 +6,7 @@ class AppController extends Controller {
 	
 	var $components = array('Session', 'Email', 'json', 'Cookie', 'DebugKit.Toolbar');
 	var $helpers = array('Form', 'Html', 'Javascript', 'Session', 'LedCommon.Image', 'Calendar', 'Board', 'Time', 'Go', 'LedCommon.Common', 'LedCommon.Navigation');
-	var $uses = array('Navigation');
+	var $uses = array('Navigation', 'Page');
 	
 	var $pageTitle = 'Honte';
 
@@ -17,6 +17,7 @@ class AppController extends Controller {
     );
     var $description = 'Informacje o spotkaniach poznańskiego klubu Go a także o wydarzeniach goistycznych odbywających się w całej Polsce.';
 	var $sidebars = array(
+	    'fb',
 		'meeting',
 		'events',
         'recent',
@@ -60,6 +61,7 @@ class AppController extends Controller {
         $page_title = explode(' : ', $this->pageTitle);
         $page_title = (count($page_title) > 1) ? $page_title[1] : $page_title[0];
 
+        $this->set('contactPage', $this->Page->findByLabel('contact'));
 		$this->set('referer', $this->referer());
 		$this->set('breadcrumbs_for_layout', $this->breadcrumbs);
 		$this->set('current', $this->current);

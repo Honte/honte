@@ -362,3 +362,18 @@ table.calendar {border-spacing: 2px; margin: 0 0 15px; border-collapse: separate
 
 #sidebarCognifide {padding: 15px 0 10px; border: solid 2px #4f581b; border-radius: 5px;}
     #sidebarCognifide h2 {color: #008DCB;}
+
+.honte-on-fb {
+	padding: 5px 10px 5px 40px;
+	height: 22px;
+	line-height: 22px;
+	display: block;
+	font-size: 1.5em;
+
+	background: url(../img/facebook.png) no-repeat left center;
+}
+
+.honte-on-fb:hover {
+	color: black;
+	background-color: #ebebeb;
+}
