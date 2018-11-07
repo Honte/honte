@@ -1,11 +1,18 @@
 <?php
-class AdministratorsController extends AppController {
+class AdministratorsController extends Controller {
 
 	var $name = 'Administrators';
 	var $uses = 'User';
-	
+    var $layout = 'admin';
+    var $admin_navigation = 'home_nav';
+
+    function beforeFilter()
+    {
+        $this->set('admin_navigation', $this->admin_navigation);
+    }
+
 	function admin_index() {
-	
+
 	}
 	
 	
@@ -33,8 +40,8 @@ class AdministratorsController extends AppController {
 	
 	
 	function admin_login() {
-	
-		
+
+
 		$this->layout = 'login';
 		$this->pageTitle = 'Logowanie';
 		
@@ -71,4 +78,3 @@ class AdministratorsController extends AppController {
 		$this->redirect('/admin');
 	}
 }
-?>
