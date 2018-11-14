@@ -2,8 +2,8 @@ $(document).ready(function() {
 
 	$("#membersList li").hover(function() {
 		$(this).find(".member-details").stop().animate({
-			marginTop: '-90px',
-			height: '126px'
+			marginTop: '-46px',
+			height: '82px'
 		}, 500);
 
 	}, function() {

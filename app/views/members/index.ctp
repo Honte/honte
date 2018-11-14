@@ -31,15 +31,10 @@
 				<dt>Miasto</dt>
 				<dd><?php echo (empty($m['Member']['city'])) ? "-" : $m['Member']['city']; ?></dd>
 				
-				<dt>KGS</dt>
-				<dd><?php echo (empty($m['Member']['kgs_nick'])) ? "-" : $this->Html->link($m['Member']['kgs_nick'], Configure::read('KGS.archive').$m['Member']['kgs_nick'], array('title' => 'Zobacz gry na KGS', 'class' => 'member-kgs')); ?></dd>
-				
 				<dt>EGD</dt>
 				<dd><?php echo (empty($m['Member']['egd'])) ? "-" : $this->Html->link($m['Member']['egd'], Configure::read('EGD.profile').$m['Member']['egd'], array('title' => 'Profil na EGD', 'class' => 'member-egd')); ?></dd>
 								
-				<dt>Baduk.pl</dt>
-				<dd><?php echo (empty($m['Member']['baduk_tag'])) ? "-" : $this->Html->link($m['Member']['baduk_tag'], Configure::read('Baduk.games_of').$m['Member']['baduk_tag'], array('title' => 'Zobacz gry na Baduk.pl', 'class' => 'member-baduk')); ?></dd>
-			</dl>		
+			</dl>
 		</div>
 		
 	</li>

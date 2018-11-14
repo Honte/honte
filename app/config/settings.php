@@ -5,7 +5,7 @@
         'download' => 'http://baduk.pl/games/download/'
     );
     $config['EGD'] = array(
-        'profile' => 'http://www.europeangodatabase.eu/Player_Card.php?&key='
+        'profile' => 'http://www.europeangodatabase.eu/EGD/Player_Card.php?&key='
     );
 	$config['KGS'] = array(
 		'archive' => 'http://www.gokgs.com/gameArchives.jsp?oldAccounts=y&user='
