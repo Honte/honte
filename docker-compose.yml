@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: baza1094_poznan
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '9002:3306'
+    volumes:
+      - './docker/sql:/docker-entrypoint-initdb.d'
+      - './docker/data:/var/lib/mysql'
+  web:
+    restart: unless-stopped
+    build:
+      context: ./docker/php
+    depends_on:
+      - db
+    volumes:
+      - '.:/var/www/html'
+    ports:
+      - '9000:80'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '9001:80'
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db

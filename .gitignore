@@ -1,8 +1,21 @@
 .idea
 
-app/tmp/cache/models/*
-app/tmp/cache/persistent/*
-app/tmp/cache/cake*
-app/tmp/logs/*
+docker/data/
 
-app/webroot/img/imagecache/*
+# CakePHP tmp dirs
+app/tmp/cache/
+app/tmp/cache/models/
+app/tmp/cache/persistent/
+app/tmp/cache/cake/
+app/tmp/logs/
+
+# Generated thumbs
+app/webroot/img/imagecache/
+
+# Uploaded content, driven by DB
+app/webroot/files/download/
+app/webroot/files/photo/
+app/webroot/files/gallery/
+app/webroot/files/member/
+app/webroot/files/place/
+
