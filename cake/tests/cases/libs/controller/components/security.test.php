@@ -4,14 +4,14 @@
  *
  * PHP versions 4 and 5
  *
- * CakePHP(tm) Tests <http://book.cakephp.org/view/1196/Testing>
- * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <http://book.cakephp.org/1.3/en/The-Manual/Common-Tasks-With-CakePHP/Testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  *  Licensed under The Open Group Test Suite License
  *  Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://book.cakephp.org/view/1196/Testing CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/1.3/en/The-Manual/Common-Tasks-With-CakePHP/Testing.html CakePHP(tm) Tests
  * @package       cake
  * @subpackage    cake.tests.cases.libs.controller.components
  * @since         CakePHP(tm) v 1.2.0.5435
@@ -580,6 +580,46 @@ DIGEST;
 			'_Token' => compact('key', 'fields')
 		);
 		$this->assertTrue($this->Controller->Security->validatePost($this->Controller));
+	}
+
+/**
+ * Test that the controller->here is part of the hash.
+ *
+ * @access public
+ * @return void
+ */
+	function testValidatePostUsesControllerHere() {
+		$this->Controller->Security->startup($this->Controller);
+		$key = $this->Controller->params['_Token']['key'];
+		$fields = 'a5475372b40f6e3ccbf9f8af191f20e1642fd877%3AModel.valid';
+
+		$this->Controller->data = array(
+			'Model' => array('username' => 'nate', 'password' => 'foo', 'valid' => '0'),
+			'_Token' => compact('key', 'fields')
+		);
+		$this->assertTrue($this->Controller->Security->validatePost($this->Controller));
+
+		$this->Controller->here = '/cake_13/tasks';
+		$this->assertFalse($this->Controller->Security->validatePost($this->Controller));
+	}
+
+/**
+ * Test that validatePost fails if you are missing the session information.
+ *
+ * @return void
+ */
+	function testValidatePostNoSession() {
+		$this->Controller->Security->startup($this->Controller);
+		$this->Controller->Session->delete('_Token');
+
+		$key = $this->Controller->params['_Token']['key'];
+		$fields = 'a5475372b40f6e3ccbf9f8af191f20e1642fd877%3AModel.valid';
+
+		$this->Controller->data = array(
+			'Model' => array('username' => 'nate', 'password' => 'foo', 'valid' => '0'),
+			'_Token' => compact('key', 'fields')
+		);
+		$this->assertFalse($this->Controller->Security->validatePost($this->Controller));
 	}
 
 /**

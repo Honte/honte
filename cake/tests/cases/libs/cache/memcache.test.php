@@ -4,14 +4,14 @@
  *
  * PHP versions 4 and 5
  *
- * CakePHP(tm) Tests <http://book.cakephp.org/view/1196/Testing>
- * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <http://book.cakephp.org/1.3/en/The-Manual/Common-Tasks-With-CakePHP/Testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  *  Licensed under The Open Group Test Suite License
  *  Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://book.cakephp.org/view/1196/Testing CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/1.3/en/The-Manual/Common-Tasks-With-CakePHP/Testing.html CakePHP(tm) Tests
  * @package       cake
  * @subpackage    cake.tests.cases.libs.cache
  * @since         CakePHP(tm) v 1.2.0.5434
@@ -186,6 +186,17 @@ class MemcacheEngineTest extends CakeTestCase {
 		$result = $Memcache->parseServerString('sülül:1111');
 		$this->assertEqual($result, array('sülül', '1111'));
 	}
+
+/**
+ * test unix sockets.
+ *
+ * @return void
+ */
+    function testParseServerStringUnix() {
+        $Memcache =& new TestMemcacheEngine();
+        $result = $Memcache->parseServerString('unix:///path/to/memcached.sock');
+        $this->assertEqual($result, array('unix:///path/to/memcached.sock', 0));
+    }
 
 /**
  * testReadAndWriteCache method

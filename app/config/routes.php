@@ -1,7 +1,6 @@
 <?php
-/* SVN FILE: $Id: routes.php 7296 2008-06-27 09:09:03Z gwoo $ */
 /**
- * Short description for file.
+ * Routes configuration
  *
  * In this file, you set up routes to your controllers and their actions.
  * Routes are very important mechanism that allows you to freely connect
@@ -9,29 +8,23 @@
  *
  * PHP versions 4 and 5
  *
- * CakePHP(tm) :  Rapid Development Framework <http://www.cakephp.org/>
- * Copyright 2005-2008, Cake Software Foundation, Inc.
- *								1785 E. Sahara Avenue, Suite 490-204
- *								Las Vegas, Nevada 89104
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @filesource
- * @copyright		Copyright 2005-2008, Cake Software Foundation, Inc.
- * @link				http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
- * @package			cake
- * @subpackage		cake.app.config
- * @since			CakePHP(tm) v 0.2.9
- * @version			$Revision: 7296 $
- * @modifiedby		$LastChangedBy: gwoo $
- * @lastmodified	$Date: 2008-06-27 02:09:03 -0700 (Fri, 27 Jun 2008) $
- * @license			http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.app.config
+ * @since         CakePHP(tm) v 0.2.9
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 /**
  * Here, we are connecting '/' (base path) to controller called 'Pages',
  * its action called 'display', and we pass a param to select the view file
- * to use (in this case, /app/views/pages/home.thtml)...
+ * to use (in this case, /app/views/pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
 /**
@@ -49,7 +42,7 @@
 	Router::connect('/artykuly/*', array('controller' => 'articles', 'action' => 'view'));
 	Router::connect('/wydarzenia', array('controller' => 'articles', 'action' => 'events'));
 	Router::connect('/reportaze', array('controller' => 'articles', 'action' => 'reports'));
-	
+
 	Router::connect('/klub', array('controller' => 'pages', 'action' => 'display', 'club'));
 	Router::connect('/pomoc', array('controller' => 'pages', 'action' => 'display', 'help'));
 	Router::connect('/mapastrony', array('controller' => 'pages', 'action' => 'display', 'map'));
@@ -58,7 +51,7 @@
 	Router::connect('/klubowicze', array('controller' => 'members', 'action' => 'index'));
 	Router::connect('/download', array('controller' => 'downloads', 'action' => 'index'));
 	// Router::connect('/czlonkowie/nowy', array('controller' => 'members', 'action' => 'add'));
-	
+
 	/*
 	// zawieszam się :)
 	Router::connect('/rejestracja', array('controller' => 'users', 'action' => 'register'));
@@ -70,9 +63,9 @@
 	Router::connect('/admin/home', array('controller' => 'administrators', 'action' => 'index', 'prefix' => 'admin'));
 	Router::connect('/admin/logout', array('controller' => 'administrators', 'action' => 'logout', 'prefix' => 'admin'));
 	Router::connect('/admin/login', array('controller' => 'administrators', 'action' => 'login', 'prefix' => 'admin'));
-	
+
 	Router::connect('/galerie', array('controller' => 'galleries', 'action' => 'index'));
-	
+
 	Router::connect('/drabinka', array('controller' => 'ladder', 'action' => 'normal'));
 	Router::connect('/drabinka/zwykla/gry/rss', array('controller' => 'ladder', 'action' => 'rss'));
     Router::connect('/drabinka/zglos-wynik', array('controller' => 'ladder', 'action' => 'commit'));
@@ -99,4 +92,3 @@
 	
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	// Router::connect('/tests', array('controller' => 'tests', 'action' => 'index'));
-?>
