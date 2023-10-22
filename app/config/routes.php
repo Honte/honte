@@ -89,6 +89,8 @@
 	Router::connect('/spotkania/tydzien', array('controller' => 'meetings', 'action' => 'week'));
 	Router::connect('/spotkania/kalendarz/*', array('controller' => 'meetings', 'action' => 'calendar'));
 	Router::connect('/spotkania/spis/*', array('controller' => 'meetings', 'action' => 'all'));
-	
+
+    Router::connect('/online', array('controller' => 'pages', 'action' => 'display', 'online'));
+
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	// Router::connect('/tests', array('controller' => 'tests', 'action' => 'index'));
